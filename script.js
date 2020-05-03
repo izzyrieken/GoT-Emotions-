@@ -1,30 +1,59 @@
-/**
-   * Sample JavaScript code for youtube.search.list
-   * See instructions for running APIs Explorer code samples locally:
-   * https://developers.google.com/explorer-help/guides/code_samples#javascript
-   */
 
-  function authenticate() {
-    return gapi.auth2.getAuthInstance()
-        .signIn({scope: "https://www.googleapis.com/auth/youtube.force-ssl"})
-        .then(function() { console.log("Sign-in successful"); },
-              function(err) { console.error("Error signing in", err); });
-  }
-  function loadClient() {
-    gapi.client.setApiKey("AIzaSyA8TmQkIz8m0YAbeMq0E9cp1VfXrKS8aXA");
-    return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
-        .then(function() { console.log("GAPI client loaded for API"); },
-              function(err) { console.error("Error loading GAPI client for API", err); });
-  }
-  // Make sure the client is loaded and sign-in is complete before calling this method.
-  function execute() {
-    return gapi.client.youtube.search.list({})
-        .then(function(response) {
-                // Handle the results here (response.result has the parsed body).
-                console.log("Response", response);
-              },
-              function(err) { console.error("Execute error", err); });
-  }
-  gapi.load("client:auth2", function() {
-    gapi.auth2.init({client_id: "YOUR_CLIENT_ID"});
-  });
+
+var app = {
+	episodes : [],
+  list : [],
+
+	initialize: function() {
+    console.log ('button int.');
+    $('.listEpisodes').click(function (){
+      console.log ('button pushed');
+			app.getEpisodes();
+
+		});
+
+	},
+
+	makeHTML: function() {
+		var theHTML = '';
+		// for (var i = 0; i < app.episodes.length; i++){
+    for (var i = 0; i < 1; i++){
+			theHTML += "<div class='list'>";
+      // theHTML += "<h3>" + app.episodes[i].name + "</h3>";
+			theHTML += "<h3>" + app.episodes + "</h3>";
+			theHTML += "</div>";
+		}
+		$('.container').html(theHTML);
+	},
+
+	getEpisodes: function() {
+		console.log("Get GoT Data");
+    var episode = 1;
+    var season = 1;
+
+    // var myURL = 'https://api.themoviedb.org/3/tv/1399/season/1/episode/1?api_key=a0c315784d22203a07f5dd6e18520cb3&language=en-US';
+    var myURL = 'https://api.themoviedb.org/3/tv/1399/season/' + season +'/episode/'+ episode + '?api_key=a0c315784d22203a07f5dd6e18520cb3&language=en-US'
+		// var myKey = 'a0c315784d22203a07f5dd6e18520cb3';
+		// var nyTimesReqURL = nyTimesURL + myNYKey;
+		console.log(myURL);
+		$.ajax({
+			url: myURL,
+			type: 'GET',
+			dataType: 'json',
+			error: function(err){
+				console.log("Uh oh...");
+				console.log(err);
+			},
+			success: function(data){
+				console.log(data);
+        app.episodes = data.name;
+				// app.episodes = data.response.docs;
+				// console.log(app.episodes);
+				app.makeHTML();
+			}
+		});
+	}
+
+
+
+};

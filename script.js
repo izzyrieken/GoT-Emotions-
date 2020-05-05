@@ -20,19 +20,19 @@ var app = {
 		});
 		$('.anguish').click(function (){
 			console.log ('romance pushed');
-			app.makeHTML(romance);
+			app.makeHTML(anguish);
 		});
 		$('.competitive').click(function (){
 			console.log ('romance pushed');
-			app.makeHTML(romance);
+			app.makeHTML(competitive);
 		});
 		$('.triumphant').click(function (){
 			console.log ('romance pushed');
-			app.makeHTML(romance);
+			app.makeHTML(triumphant);
 		});
 		$('.sinister').click(function (){
 			console.log ('romance pushed');
-			app.makeHTML(romance);
+			app.makeHTML(sinister);
 		});
 	},
 

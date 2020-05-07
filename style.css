@@ -1,71 +1,70 @@
 @font-face {
-   font-family: BeloidGothic.woff;
-   src: url("BeloidGothic.woff");
+   font-family: BeloidGothic;
+   src: url("BeloidGothic-Regular.woff");
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  /* background-color: #8caf8c; */
-  background-image: url("paper2.jpg");
-  background-color: #cccccc;
+  background-color: #594e2a;
   background-repeat: no-repeat;
   width: 100%;
   height: 100%;
 }
 
 h1 {
+margin-top: 5px;
 text-align: center;
 /* font-family: 'Kumar One', cursive; */
 /* font-family: 'Kumar One Outline', cursive; */
 font-family: BeloidGothic;
-font-size: 30px;
-color: black;
+font-size: 40px;
+color: #fff8eb;
+letter-spacing: 0.09em;
+text-transform: uppercase;
 /* color: #953231; */
+}
+
+.bigLetter{
+  font-size: 65px;
+  letter-spacing: 0.11em;
 }
 
 p{
   position: relative;
   top: -30px;
   text-align: center;
-  font-size: 18px;
-  font-family: 'Kumar One', cursive;
+  font-size: 25px;
+  font-family: BeloidGothic;
   /* font-family: 'Kumar One Outline', cursive; */
   /* color: #953231; */
   /* color: #3a2e20; */
   color: black;
+  line-height: 0.8em
 }
 
 
 img{
-  width: 300px;
+  width: 160px;
   /* height: 40%; */
-  float: left;
-  margin-left: 250px;
-  margin-top: -30px;
+  margin-top: -200px;
 }
 
-.dragon{
-  width:250px;
-  z-index: -1;
-  position: absolute;
-  margin-top: 300px;
-  margin-left: 1200px;
-  transform: rotate(20deg);
+.flag1{
+  position: relative;
+  margin-left: 150px;
+
 }
 
-.dragon2{
-  width:370px;
-  z-index: -1;
-  position: absolute;
-  margin-top: -30px;
-  margin-left: 70px;
-  /* transform: rotate(20deg); */
+.flag2{
+  position: relative;
+  margin-left: 1000px;
 }
+
+
 
 .question{
-  color: black;
-  font-family: 'Kumar One', cursive;
-  font-size: 40px;
+  color: #e25042;
+  font-family: BeloidGothic;
+  font-size: 90px;
   /* position: relative;
   margin-top: 100px;
   margin-left: -300px; */
@@ -75,7 +74,7 @@ img{
   left: 0; */
   position: absolute;
   text-align: center;
-  top: 25%;
+  top: 20%;
   width: 100%;
 
 
@@ -83,41 +82,43 @@ img{
 
 .show{
   color: black;
-  font-family: 'Kumar One', cursive;
+  font-family: BeloidGothic;
   font-size: 15px;
   position: absolute;
   margin-top: 335px;
   margin-left: 1000px;
 }
 
+h3{
+  line-height: 7px;
+}
+
 .container1{
-  font-family: 'Kumar One', cursive;
+  font-family: BeloidGothic;
+  font-size: 35px;
   text-align: center;
   position: absolute;
   /* margin-top: 100px;
   margin-left: 650px; */
-  left: 0; */
-  margin-top: 120px;
+  left: 0;
+  margin-top: 110px;
   position: absolute;
   text-align: center;
-  top: 50%;
+  top: 35%;
   width: 100%;
 
 }
 
-
 .wrap {
   text-align: center;
-
-
 }
 
 button {
-  color: #953231;
+  color: #ffcf48;
 
   text-align: left;
-  font-family: 'Kumar One', cursive;
-  font-size: 20px;
+  font-family: BeloidGothic;
+  font-size: 35px;
   text-transform: uppercase;
   /* color:black; */
   background:none;
@@ -125,6 +126,7 @@ button {
   outline:none;
   margin:0;
   cursor: pointer;
+  padding-top: 5px;
   padding-left:7px;
   padding-right:7px;
   /* padding-bottom: 3px; */
@@ -147,7 +149,7 @@ button:hover{
   left: 0; */
   position: absolute;
   text-align: center;
-  top: 40%;
+  top: 39%;
   width: 100%;
 
 }

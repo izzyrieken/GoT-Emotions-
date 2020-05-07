@@ -4,7 +4,7 @@
 
 var i = 0;
 var txt = 'What does your heart desire?';
-var speed = 40;
+var speed = 50;
 
 function typeWriter() {
   if (i < txt.length) {
